@@ -1,1 +1,18 @@
+vips:
+  - name: "Elon Musk"
+    type: "person"
+    twitter_handle: "elonmusk"
+    github_username: null
+    reddit_username: null
 
+  - name: "NASA"
+    type: "organization"
+    twitter_handle: "NASA"
+    github_username: "NASA"
+    reddit_username: "NASA"
+
+  - name: "OpenAI"
+    type: "organization"
+    twitter_handle: "OpenAI"
+    github_username: "openai"
+    reddit_username: null
