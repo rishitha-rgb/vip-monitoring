@@ -1,1 +1,27 @@
+import duckdb
+from pathlib import Path
 
+DB_PATH = Path(__file__).parent.parent / "data" / "vip_data.duckdb"
+
+def get_connection():
+    DB_PATH.parent.mkdir(exist_ok=True)
+    conn = duckdb.connect(database=str(DB_PATH), read_only=False)
+    return conn
+
+def create_table():
+    conn = get_connection()
+    conn.execute("""
+    CREATE TABLE IF NOT EXISTS canonical_items (
+        source TEXT,
+        vip_name TEXT,
+        vip_type TEXT,
+        content TEXT,
+        url TEXT,
+        timestamp TEXT
+    )
+    """)
+    conn.close()
+
+if __name__ == "__main__":
+    create_table()
+    print("DuckDB table 'canonical_items' is ready!")
