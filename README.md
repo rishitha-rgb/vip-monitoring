@@ -1,38 +1,18 @@
-# Core Framework
-fastapi==0.104.1
-uvicorn[standard]==0.24.0
-pydantic==2.5.2
+# VIP Threat & Misinformation Monitoring System
 
-# Database & Storage
-duckdb==0.9.2
-pandas==2.1.4
-numpy==1.25.2
+Full-stack AI-powered threat monitoring to protect VIPs across social media.
 
-# Machine Learning & NLP
-transformers==4.36.2
-torch==2.1.1
-scikit-learn==1.3.2
-datasets==2.15.0
+- Backend: Python FastAPI with ML detection and multi-platform ingestion.
+- Frontend: React + Tailwind dashboard with real-time monitoring and analytics.
+- Multi-platform: Twitter/X, Reddit, GitHub, Telegram.
+- AI detection: Hybrid ML Classifier + VIP-specific rules.
 
-# Social Media APIs
-snscrape==0.7.0.20230622
-praw==7.7.1
-PyGithub==2.1.1
-telethon==1.34.0
-tweepy==4.14.0
+## Quick Start
 
-# Web & HTTP
-requests==2.31.0
-aiohttp==3.9.1
+1. Clone repository  
+2. Configure `.env` with your API keys  
+3. Run `./start_app.sh` to setup and launch app  
+4. Open http://localhost:3000 in your browser
 
-# Environment & Config
-python-dotenv==1.0.0
+See folder structure and full docs for integration details.
 
-# Visualization & Charts (for dashboard)
-plotly==5.17.0
-matplotlib==3.8.2
-
-# Additional utilities
-schedule==1.2.1
-asyncio==3.4.3
-python-dateutil==2.8.2
