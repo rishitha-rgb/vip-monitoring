@@ -1,6 +1,0 @@
-import yaml
-
-with open("configs/sources.yaml") as f:
-    config = yaml.safe_load(f)
-
-print(config["twitter"]["bearer_token"])
