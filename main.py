@@ -1,8 +1,7 @@
-from ingestion.ingestion import run_ingestion
-from ai.ai_scoring import run_ai
-from dashboard.dashboard import run_dashboard
+from fastapi import FastAPI
 
-if __name__ == "__main__":
-    data = run_ingestion()
-    results = run_ai(data)
-    run_dashboard(results)
+app = FastAPI()
+
+@app.get("/")
+def root():
+    return {"message": "VIP Threat & Misinformation Monitoring System is running 🚀"}
