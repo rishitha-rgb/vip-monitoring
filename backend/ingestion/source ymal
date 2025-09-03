@@ -1,0 +1,14 @@
+twitter:
+  bearer_token: "YOUR_TWITTER_BEARER_TOKEN"
+
+reddit:
+  client_id: "YOUR_CLIENT_ID"
+  client_secret: "YOUR_CLIENT_SECRET"
+  user_agent: "vip-monitoring-bot"
+
+github:
+  access_token: "YOUR_GITHUB_PAT"
+
+telegram:
+  api_id: YOUR_API_ID
+  api_hash: "YOUR_API_HASH"
