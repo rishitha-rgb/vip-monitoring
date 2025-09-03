@@ -1,0 +1,37 @@
+import snscrape.modules.twitter as sntwitter
+from src.utils import load_yaml
+from src.models import CanonicalItem, insert_item
+
+# Load VIPs
+vip_list = load_yaml("vip_list.yaml")["vips"]
+
+def scrape_tweets(vip_handle, limit=5):
+    """Scrape latest tweets for a given Twitter handle."""
+    query = f"from:{vip_handle}"
+    tweets = []
+    for i, tweet in enumerate(sntwitter.TwitterSearchScraper(query).get_items()):
+        if i >= limit:
+            break
+        tweets.append(tweet)
+    return tweets
+
+def ingest_twitter():
+    for vip in vip_list:
+        handle = vip.get("twitter_handle")
+        if not handle:
+            continue
+        tweets = scrape_tweets(handle, limit=5)
+        for tweet in tweets:
+            item = CanonicalItem(
+                source="twitter",
+                vip_name=vip["name"],
+                vip_type=vip["type"],
+                content=tweet.content,
+                url=f"https://twitter.com/{handle}/status/{tweet.id}",
+                timestamp=str(tweet.date)
+            )
+            insert_item(item)
+            print(f"Ingested tweet from {vip['name']}")
+
+if __name__ == "__main__":
+    ingest_twitter()
