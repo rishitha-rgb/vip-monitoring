@@ -1,0 +1,93 @@
+# Python compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual environment folders
+venv/
+env/
+ENV/
+.venv/
+
+# Distribution / packaging
+build/
+dist/
+egg-info/
+.eggs/
+*.egg
+*.egg-info
+pip-wheel-metadata/
+wheels/
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+.coverage
+.tox/
+.nox/
+.cache/
+.pytest_cache/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+*.log
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.kate-swp
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+
+# Logs and databases
+logs/
+*.log
+*.sql
+*.sqlite
+*.db
+
+# DuckDB database
+data/*.db
+
+# Model files
+models/*.pkl
+models/*.bin
+models/*.pt
+
+# Node modules and React build output
+node_modules/
+build/
+dist/
+
+# React environment variables
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Temporary files
+tmp/
+temp/
+
+# dotenv local env files
+*.env
