@@ -1,1 +1,29 @@
 
+import duckdb
+import json
+
+class CanonicalItem:
+    def __init__(self, text, author, source, metadata):
+        self.text = text
+        self.author = author
+        self.source = source
+        self.metadata = metadata
+
+class DuckDBStorage:
+    def __init__(self, db_path="vip_data.duckdb"):
+        self.conn = duckdb.connect(db_path)
+        self.conn.execute("""
+            CREATE TABLE IF NOT EXISTS items (
+                text STRING,
+                author STRING,
+                source STRING,
+                metadata JSON
+            )
+        """)
+
+    def insert_item(self, item):
+        metadata_json = json.dumps(item.metadata)  # ensure valid JSON
+        self.conn.execute(
+            "INSERT INTO items VALUES (?, ?, ?, ?)",
+            [item.text, item.author, item.source, metadata_json]
+        )
