@@ -1,0 +1,22 @@
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from storage.canonical import CanonicalItem, DuckDBStorage
+from datetime import datetime
+
+storage = DuckDBStorage()
+
+item = CanonicalItem(
+    source="twitter",
+    vip="Test VIP",
+    handle="test_user",
+    content="This is a fake post for testing.",
+    url="https://twitter.com/test_user/status/12345",
+    timestamp=datetime.utcnow(),
+    metadata={"likes": 10, "retweets": 2}
+)
+
+storage.insert_item(item)
+df = storage.fetch_all()
+print(df)
