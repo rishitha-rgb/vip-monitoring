@@ -1,0 +1,17 @@
+twitter:
+  use_snscrape: true
+
+reddit:
+  client_id: "YOUR_REDDIT_CLIENT_ID"
+  client_secret: "YOUR_REDDIT_CLIENT_SECRET"
+  user_agent: "vip_monitoring_agent"
+
+github:
+  access_token: "YOUR_GITHUB_PERSONAL_ACCESS_TOKEN"
+
+telegram:
+  api_id: 123456
+  api_hash: "YOUR_TELEGRAM_API_HASH"
+  channels:
+    - "example_channel_1"
+    - "example_channel_2"
